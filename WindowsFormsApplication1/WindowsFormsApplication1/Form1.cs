@@ -18,9 +18,9 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             _model = new Model();
-            textBoxA.DataBindings.Add("Text", _model, "A", false, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxLower.DataBindings.Add("Text", _model, "Lower", false, DataSourceUpdateMode.Never);
-            textBoxUpper.DataBindings.Add("Text", _model, "Upper", false, DataSourceUpdateMode.Never);
+            textBoxA.DataBindings.Add(nameof(textBoxA.Text), _model, nameof(_model.A), false, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxLower.DataBindings.Add(nameof(textBoxLower.Text), _model, nameof(_model.Lower), false, DataSourceUpdateMode.Never);
+            textBoxUpper.DataBindings.Add(nameof(textBoxLower.Text), _model, nameof(_model.Upper), false, DataSourceUpdateMode.Never);
         }
     }
 }
