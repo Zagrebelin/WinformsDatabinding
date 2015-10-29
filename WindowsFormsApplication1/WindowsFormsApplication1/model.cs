@@ -23,15 +23,19 @@ namespace WindowsFormsApplication1
                 _a = value;
                 if (UseThread)
                 {
-                    new Thread(() => { Upper = $"{A.ToUpper()} [Tid={Thread.CurrentThread.ManagedThreadId}]"; }).Start();
-                    new Thread(() => { Lower = $"{A.ToLower()} [Tid={Thread.CurrentThread.ManagedThreadId}]"; }).Start();
+                    new Thread(UpdateUpperLower).Start();
                 }
                 else
                 {
-                    Upper = A.ToUpper();
-                    Lower = A.ToLower();
+                    UpdateUpperLower();
                 }
             }
+        }
+
+        private void UpdateUpperLower()
+        {
+            Upper = $"{A.ToUpper()} [Tid={Thread.CurrentThread.ManagedThreadId}]";
+            Lower = $"{A.ToLower()} [Tid={Thread.CurrentThread.ManagedThreadId}]";
         }
 
         public bool UseThread { get; set; }
