@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class Model:INotifyPropertyChanged
+    internal class Model 
     {
         private string _a;
         private string _lower;
@@ -33,7 +33,6 @@ namespace WindowsFormsApplication1
                 if (value == _lower)
                     return;
                 _lower = value;
-                OnPropertyChanged();
             }
         }
 
@@ -44,16 +43,7 @@ namespace WindowsFormsApplication1
             {
                 if (value == _upper) return;
                 _upper = value;
-                OnPropertyChanged();
             }
-        }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
