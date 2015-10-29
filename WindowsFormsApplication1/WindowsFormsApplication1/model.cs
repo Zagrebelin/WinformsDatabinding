@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
@@ -20,10 +21,20 @@ namespace WindowsFormsApplication1
             set
             {
                 _a = value;
-                Upper = A.ToUpper();
-                Lower = A.ToLower();
+                if (UseThread)
+                {
+                    new Thread(() => { Upper = $"{A.ToUpper()} [Tid={Thread.CurrentThread.ManagedThreadId}]"; }).Start();
+                    new Thread(() => { Lower = $"{A.ToLower()} [Tid={Thread.CurrentThread.ManagedThreadId}]"; }).Start();
+                }
+                else
+                {
+                    Upper = A.ToUpper();
+                    Lower = A.ToLower();
+                }
             }
         }
+
+        public bool UseThread { get; set; }
 
         public string Lower
         {

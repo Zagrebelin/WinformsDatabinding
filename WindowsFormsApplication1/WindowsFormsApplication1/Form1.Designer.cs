@@ -34,6 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxUpper = new System.Windows.Forms.TextBox();
+            this.cbUseThread = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxA
@@ -43,7 +44,7 @@
             this.textBoxA.Size = new System.Drawing.Size(100, 20);
             this.textBoxA.TabIndex = 0;
             // 
-            // textBoxB
+            // textBoxLower
             // 
             this.textBoxLower.Location = new System.Drawing.Point(81, 39);
             this.textBoxLower.Name = "textBoxLower";
@@ -78,7 +79,7 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "upper";
             // 
-            // textBoxC
+            // textBoxUpper
             // 
             this.textBoxUpper.Location = new System.Drawing.Point(81, 63);
             this.textBoxUpper.Name = "textBoxUpper";
@@ -86,11 +87,22 @@
             this.textBoxUpper.Size = new System.Drawing.Size(100, 20);
             this.textBoxUpper.TabIndex = 4;
             // 
+            // cbUseThread
+            // 
+            this.cbUseThread.AutoSize = true;
+            this.cbUseThread.Location = new System.Drawing.Point(81, 90);
+            this.cbUseThread.Name = "cbUseThread";
+            this.cbUseThread.Size = new System.Drawing.Size(79, 17);
+            this.cbUseThread.TabIndex = 5;
+            this.cbUseThread.Text = "UseThread";
+            this.cbUseThread.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.cbUseThread);
             this.Controls.Add(this.textBoxUpper);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -112,6 +124,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxUpper;
+        private System.Windows.Forms.CheckBox cbUseThread;
     }
 }
 
